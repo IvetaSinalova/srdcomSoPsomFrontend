@@ -10,11 +10,7 @@ const TitleImage = ({ text, imageName }) => {
         alt={imageName}
       />
       <div className="flex justify-center">
-        <div
-          className="absolute bottom-10 bg-white text-black text-center py-5 px-10 w-3/4 flex justify-center"
-          style={{ fontSize: "30px" }}
-        >
-          {/*tu sa bude text menit podla karty ktora sa rozklikne, a to iste aj obrazok */}
+        <div className="custom-font image-title absolute bg-white text-black text-center flex justify-center">
           {text}
         </div>
       </div>

@@ -3,10 +3,7 @@ import TitleImage from "./TitleImage";
 const Canistherapy = () => {
   return (
     <div>
-      <TitleImage
-        imageName="titulka.jpg"
-        text="INTERVENCIE S ASISTENCIOU PSOV - CANISTERAPIA"
-      />
+      <TitleImage imageName="titulka.jpg" text="CANISTERAPIA" />
       <div className="pt-4 text-lg flex flex-col gap-4">
         <div>
           Pes nemá predsudky. Čo to znamená ? Že môže byť tým najlepším

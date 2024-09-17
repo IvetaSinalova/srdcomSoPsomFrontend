@@ -1,21 +1,68 @@
-import React, { useState, useEffect } from "react";
-import { Outlet, Link } from "react-router-dom";
-import NavbarOption from "./NavbarOption";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import Menu from "./Menu";
 
 const Navbar = () => {
   const location = useLocation();
+  const hamburgerRef = useRef(null);
+  const menuRef = useRef(null);
+  const [hamburgerSelected, setHamburgerSelected] = useState(false);
   const [pathName, setPathName] = useState(location.pathname);
+
   useEffect(() => {
     const currentPathname = location.pathname;
     if (pathName !== currentPathname) {
+      setHamburgerSelected(false); // Close the menu when navigating
       setPathName(currentPathname);
     }
   }, [location.pathname, pathName]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        hamburgerSelected &&
+        ((menuRef.current && !menuRef.current.contains(event.target)) ||
+          (hamburgerRef.current && hamburgerRef.current.contains(event.target)))
+      ) {
+        console.log("setting to false");
+
+        setHamburgerSelected(false);
+      } else if (
+        (hamburgerRef.current &&
+          hamburgerRef.current.contains(event.target) &&
+          !hamburgerSelected) ||
+        !hamburgerSelected
+      ) {
+        console.log("setting to true");
+        setHamburgerSelected(true);
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth > 800) {
+        console.log("setting hamburger to false");
+        setHamburgerSelected(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    // Initial check
+    handleResize();
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const closeMenu = () => {
+    setHamburgerSelected(false);
+  };
+
   const navbarOption = (title, path) => {
     return (
-      <div className={`navbar-option flex items-center`}>
+      <div className={`titles custom-font flex items-center`}>
         <div
           className={`flex items-center justify-center px-2 border-b-2${
             pathName === `/${path}`
@@ -31,45 +78,48 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full py-4 shadow-md bg-white">
-        <div className="flex justify-between text-center items-center px-12 cursor-pointer text-lg ">
+      <nav className="fixed top-0 left-0 w-full shadow-md bg-white">
+        <div className="flex navbar justify-between text-center items-center cursor-pointer text-lg">
           <Link to="/">
-            <div className="flex items-center text-center justify-center">
-              <img
-                src="logo_quido.png"
-                style={{ width: "80px" }}
-                className="mr-4"
-              />
+            <div className="flex items-center page-name text-center justify-center">
+              <img src="logo_quido.png" className="navbar-logo" alt="logo" />
               {navbarOption("Srdcom so psom", "")}
             </div>
           </Link>
-          <div className="flex gap-6">
-            <Link to="about">{navbarOption("O NÁS", "about")}</Link>
-            <Link to="canistherapy">
+          <div className="flex">
+            <Link to="/about">{navbarOption("O NÁS", "about")}</Link>
+            <Link to="/canistherapy">
               {navbarOption("CANISTERAPIA", "canistherapy")}
             </Link>
-            <Link to="posts">{navbarOption("ČLÁNKY", "posts")}</Link>
-            <Link to="contact">{navbarOption("KONTAKT", "contact")}</Link>
+            <Link to="/posts">{navbarOption("ČLÁNKY", "posts")}</Link>
+            <Link to="/contact">{navbarOption("KONTAKT", "contact")}</Link>
             <div className="flex justify-center items-center gap-3">
               <img
+                className="navbar-icon"
                 src={`/facebook.png`}
                 alt="facebook"
-                style={{ height: "40px" }}
               />
               <img
+                className="navbar-icon"
                 src={`/instagram.png`}
-                alt="facebook"
-                style={{ height: "40px" }}
+                alt="instagram"
               />
             </div>
           </div>
+          <button className="hamburger-menu" ref={hamburgerRef}>
+            <img className="p-1" src={`/hamburger-black.png`} alt="hamburger" />
+          </button>
         </div>
       </nav>
 
-      <div className="content px-8">
-        <div>
-          <Outlet />
-        </div>
+      <div className="content">
+        {hamburgerSelected && (
+          <div>
+            <Menu currentPath={pathName} closeMenu={closeMenu} />
+            <div ref={menuRef} className="overlay" />
+          </div>
+        )}
+        <Outlet />
       </div>
     </div>
   );
