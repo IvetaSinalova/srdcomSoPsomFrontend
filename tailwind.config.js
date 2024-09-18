@@ -8,11 +8,9 @@ module.exports = {
         blue: "#3c6e8d",
         grayGreen: "#8daba8",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    },
+    fontSize: {
+      body: "16px", // or any custom size you want
     },
   },
 };

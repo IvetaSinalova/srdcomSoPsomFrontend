@@ -4,8 +4,7 @@ import Menu from "./Menu";
 
 const Navbar = () => {
   const location = useLocation();
-  const hamburgerRef = useRef(null);
-  const menuRef = useRef(null);
+  const bgRef = useRef(null);
   const [hamburgerSelected, setHamburgerSelected] = useState(false);
   const [pathName, setPathName] = useState(location.pathname);
 
@@ -21,26 +20,15 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (
         hamburgerSelected &&
-        ((menuRef.current && !menuRef.current.contains(event.target)) ||
-          (hamburgerRef.current && hamburgerRef.current.contains(event.target)))
+        bgRef.current &&
+        bgRef.current.contains(event.target)
       ) {
-        console.log("setting to false");
-
         setHamburgerSelected(false);
-      } else if (
-        (hamburgerRef.current &&
-          hamburgerRef.current.contains(event.target) &&
-          !hamburgerSelected) ||
-        !hamburgerSelected
-      ) {
-        console.log("setting to true");
-        setHamburgerSelected(true);
       }
     };
 
     const handleResize = () => {
       if (window.innerWidth > 800) {
-        console.log("setting hamburger to false");
         setHamburgerSelected(false);
       }
     };
@@ -78,7 +66,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full shadow-md bg-white">
+      <nav className="fixed top-0 left-0 w-full shadow-md bg-white z-100">
         <div className="flex navbar justify-between text-center items-center cursor-pointer text-lg">
           <Link to="/">
             <div className="flex items-center page-name text-center justify-center">
@@ -106,7 +94,10 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <button className="hamburger-menu" ref={hamburgerRef}>
+          <button
+            className="hamburger-menu"
+            onClick={() => setHamburgerSelected((prevState) => !prevState)}
+          >
             <img className="p-1" src={`/hamburger-black.png`} alt="hamburger" />
           </button>
         </div>
@@ -115,11 +106,15 @@ const Navbar = () => {
       <div className="content">
         {hamburgerSelected && (
           <div>
-            <Menu currentPath={pathName} closeMenu={closeMenu} />
-            <div ref={menuRef} className="overlay" />
+            <div>
+              <Menu currentPath={pathName} closeMenu={closeMenu} />
+            </div>
+            <div ref={bgRef} className="overlay" />
           </div>
         )}
-        <Outlet />
+        <div className="px-8">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
