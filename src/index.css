@@ -122,6 +122,28 @@
 
 }
 
+.logo-contact{
+    height: 300px;
+}
+
+.contact-icon{
+    height: 100px;
+}
+
+.down .loading-paw {
+    transform: rotate(-120deg); /* Rotates the image by 45 degrees */
+
+}
+
+.up .loading-paw{
+    transform: rotate(-60deg); /* Rotates the image by 45 degrees */
+
+}
+
+.loading-paw{
+    width: 50px;
+}
+
 .overlay{
     background-color: black;
     opacity: 50%;
@@ -155,6 +177,10 @@ li::before {
 body{
     background-color: #f8f7f6;
     font-size: 23px;
+}
+
+.contact-icon-wrapper{
+    gap: 40px
 }
 
 @media(max-width:1650px){
@@ -294,6 +320,9 @@ body{
     .menu, .overlay{
         display: inline;
     }
+    .logo-contact{
+        height: 250px;
+    }
     
 }
 
@@ -310,9 +339,42 @@ body{
     .about-image-wrapper{
         width: 100%;
     }
+
+ 
 }
 
+@media(max-width:610px){
+    .contact-icon{
+        height: 90px;
+    }
+
+    .logo-contact{
+        height: 200px;
+    }
+}
+
+@media(max-width:561px){
+    .logo-contact{
+        height: 150px;
+    }
+
+    .contact-icon{
+        height: 80px;
+    }
+
+    
+.contact-icon-wrapper{
+    gap: 20px
+}
+
+}
+
+
+
 @media(max-width:500px){
+    .contact-icon{
+        height: 60px;
+    }
     .image-title{
         width:90%;
         padding: 20px 10px;

@@ -5,8 +5,8 @@ import Loading from "./Loading";
 const Home = () => {
   return (
     <div>
-      {/* <Loading /> */}
-      <TitleImage imageName="titulka.jpg" text="Ako inak než srdcom so psom." />
+      <Loading />
+      {/* <TitleImage imageName="titulka.jpg" text="Ako inak než srdcom so psom." /> */}
     </div>
   );
 };
