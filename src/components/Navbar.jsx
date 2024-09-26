@@ -45,7 +45,7 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [hamburgerSelected]);
 
   const closeMenu = () => {
     setHamburgerSelected(false);
