@@ -7,6 +7,7 @@ const Navbar = () => {
   const bgRef = useRef(null);
   const [hamburgerSelected, setHamburgerSelected] = useState(false);
   const [pathName, setPathName] = useState(location.pathname);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
 
   useEffect(() => {
     const currentPathname = location.pathname;
@@ -28,6 +29,8 @@ const Navbar = () => {
     };
 
     const handleResize = () => {
+      setIsMobile(window.innerWidth <= 800);
+
       if (window.innerWidth > 800) {
         setHamburgerSelected(false);
       }
@@ -53,7 +56,7 @@ const Navbar = () => {
       <div className={`titles custom-font flex items-center`}>
         <div
           className={`flex items-center justify-center px-2 border-b-2${
-            pathName === `/${path}`
+            pathName === `/${path}` && !isMobile
               ? " text-red border-b-red"
               : "border-b-transparent"
           }`}
@@ -66,7 +69,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-full shadow-md bg-white z-100">
+      <nav className="fixed top-0 left-0 w-full shadow-md bg-white z-50">
         <div className="flex navbar justify-between text-center items-center cursor-pointer text-lg">
           <Link to="/">
             <div className="flex items-center page-name text-center justify-center">

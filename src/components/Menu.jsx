@@ -12,6 +12,15 @@ const Menu = ({ currentPath, closeMenu }) => {
 
   return (
     <div className="menu custom-font">
+      <Link to="/" onClick={closeMenu}>
+        <div
+          className={`menu-item ${showItems ? "show" : "hide"} ${
+            currentPath === "/" ? "bg-red" : "bg-white"
+          } px-4 py-2`}
+        >
+          DOMOV
+        </div>
+      </Link>
       <Link to="/about" onClick={closeMenu}>
         <div
           className={`menu-item ${showItems ? "show" : "hide"} ${
@@ -48,6 +57,23 @@ const Menu = ({ currentPath, closeMenu }) => {
           KONTAKT
         </div>
       </Link>
+      <div
+        className={`menu-item flex justify-end gap-3 items-end ${
+          showItems ? "show" : "hide"
+        } bg-white px-4 py-2`}
+        style={{ height: "44px" }}
+      >
+        <img
+          src={`/facebook.png`}
+          alt="facebook"
+          style={{ width: "25px", height: "25px" }}
+        />
+        <img
+          src={`/instagram.png`}
+          alt="instagram"
+          style={{ width: "25px", height: "25px" }}
+        />
+      </div>
     </div>
   );
 };

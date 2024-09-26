@@ -12,7 +12,7 @@ const About = () => {
         />
         <ul className="pt-6">
           {points.map((point) => (
-            <li>{point}</li>
+            <li key={point}>{point}</li>
           ))}
         </ul>
       </div>
@@ -21,8 +21,7 @@ const About = () => {
   return (
     <div className="items-center flex justify-center text-center flex-col custom-font">
       <TitleImage imageName="titulka.jpg" text="O NÁS" />
-      <div className="option-title py-6 text-red">O nás</div>
-      <div className="introduction-wrapper justify-between gap-4">
+      <div className="pt-8 introduction-wrapper justify-between gap-4">
         {introduction("Alica", "Alcicka.jpg", [
           "Študovala",
           "Venujem",

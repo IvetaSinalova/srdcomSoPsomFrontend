@@ -4,10 +4,7 @@ const Canistherapy = () => {
   return (
     <div className="custom-font">
       <TitleImage imageName="titulka.jpg" text="CANISTERAPIA" />
-      <div className="pt-4 text-lg flex flex-col items-center justify-center text-center ">
-        <div className="option-title py-6 text-red">
-          Intervencia s asistenciou psov - Canisterapia
-        </div>
+      <div className="pt-8 flex flex-col items-center justify-center text-center ">
         <div className="flex flex-col gap-6">
           <div>Pes nemá predsudky.</div>
           <div>
