@@ -1,5 +1,5 @@
 import React from "react";
-import TitleImage from "./TitleImage";
+// import TitleImage from "./TitleImage";
 import Loading from "./Loading";
 
 const Home = () => {
