@@ -117,6 +117,11 @@
     display:none;
 }
 
+.content-height{
+    height: calc(100vh - var(--navbar-max-heigh) - 30px);
+
+}
+
 .overlay{
     background-color: black;
     opacity: 50%;
@@ -186,6 +191,12 @@ body{
         font-size:22px;
     }
 
+    
+    .content-height{
+        height: calc(100vh - var(--navbar-max-1100-height) - 30px);
+
+    }
+
     .navbar{
         height: var(--navbar-max-1100-height);    
     }
@@ -229,6 +240,12 @@ body{
         font-size: 18px;
     }
     
+    
+.content-height{
+    height: calc(100vh - var(--navbar-max-900-heigh) - 30px);
+
+}
+
     .navbar{
         height: var(--navbar-max-900-heigh);  
         padding: 0px 35px;
@@ -325,10 +342,15 @@ body{
         padding-top: var(--navbar-max-500-heigh);
     }
 
+    .content-height{
+        height: calc(100vh - var(--navbar-max-500-heigh) - 30px);
+
+    }
+
 
     .overlay, .menu{
         top:var(--navbar-max-500-heigh);
-        height: calc(100% - var(--navbar-max-500-heigh));
+        height: calc(100vh - var(--navbar-max-500-heigh));
     }
 }
 
