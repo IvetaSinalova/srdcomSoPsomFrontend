@@ -10,12 +10,13 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const currentPathname = location.pathname;
     if (pathName !== currentPathname) {
       setHamburgerSelected(false); // Close the menu when navigating
       setPathName(currentPathname);
     }
-  }, [location.pathname, pathName]);
+  }, [location.pathname, pathName, location]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {

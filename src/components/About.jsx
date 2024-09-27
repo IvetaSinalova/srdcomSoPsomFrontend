@@ -58,14 +58,14 @@ const About = () => {
           "Vo voľnom čase sa venujem vytváraniu infografík a rôznych materiálov pre naše intervencie, prípadne sa zameriavam aj na články o psoch vo svojich FB skupinách ",
         ])}
         {introduction("Berinne", "berin.jpg", [
-          "Berinne Briss Amadea ",
+          "Berinne Briss Amadea",
           "Plemeno: Lagatto Romagnolo",
           "Canisterapeutický pes s certifikátom od organizácie Jde to team (CZ)",
           "Berinne je stále veselá fenka, ktorá miluje jedlo, pamlsky a všetko, čo sa dá jesť (áno využívame aj jabĺčka, mrkvu alebo uhorku hlavne pri deťoch, ktorým nevyhovujú granule)",
           "Toto plemeno nepĺzne, a tak sa po našej návšteve nemusíte obávať veľkého upratovania",
         ])}
         {introduction("Quido", "Quido.jpeg", [
-          "Kríženec plemena Bichon à poil frisé ",
+          "Kríženec plemena Bichon à poil frisé",
           "Môj psí senior",
           "Vďaka nemu začala oficiálne moja kynologická cesta - prvé začiatky voľby správnej metódy výchovy a výcviku",
           "Intervenciám (canisterapií) sa nikdy nevenoval, ani nebude – nemá na to už vek, a ani najvhodnejšiu povahu, nikomu by neublížil, ale nemal by zo stretnutí radosť, skôr by sa veľmi unavoval",
