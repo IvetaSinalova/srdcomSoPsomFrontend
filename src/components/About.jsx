@@ -35,9 +35,10 @@ const About = () => {
                   href="https://www.uvlf.sk/akreditovane-studijne-programy/vztah-clovek-zviera-a-jeho-vyuzitie-v-canisterapii-a-hipoterapii"
                   target="_blank"
                   className="underline"
+                  rel="noreferrer"
                 >
                   Canisterapie a Hipoterapie na UVLF KE
-                </a>{" "}
+                </a>
               </li>
               <li className="flex justify-starts items-start flex-col">
                 <div>magisterského stupňa -</div>
@@ -45,9 +46,10 @@ const About = () => {
                   href="https://www.uvlf.sk/akreditovane-studijne-programy/pohoda-a-ochrana-zvierat"
                   target="_blank"
                   className="underline"
+                  rel="noreferrer"
                 >
                   Pohoda a ochrana zvierat na UVLF KE
-                </a>{" "}
+                </a>
               </li>
             </ol>
           </div>,
