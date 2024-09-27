@@ -9,6 +9,7 @@ import Canistherapy from "./components/Canistherapy";
 import Home from "./components/Home";
 import Posts from "./components/Posts";
 import Contact from "./components/Contact";
+import Offers from "./components/Offers";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "/canistherapy", element: <Canistherapy /> },
       { path: "/posts", element: <Posts /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/offers", element: <Offers /> },
     ],
   },
 ]);

@@ -9,6 +9,17 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'LeagueSpartan';
+    src: url('./fonts/LeagueSpartan-Regular.ttf') format('truetype');
+    font-weight: normal; 
+}
+
+  .navbar-title{
+    font-family: 'LeagueSpartan';
+    font-weight: bold;
+}
+
 
   :root {
     --navbar-max-heigh: 119px;
@@ -131,12 +142,12 @@
 }
 
 .down .loading-paw {
-    transform: rotate(-120deg); /* Rotates the image by 45 degrees */
+    transform: rotate(120deg); /* Rotates the image by 45 degrees */
 
 }
 
 .up .loading-paw{
-    transform: rotate(-60deg); /* Rotates the image by 45 degrees */
+    transform: rotate(60deg); /* Rotates the image by 45 degrees */
 
 }
 
@@ -160,15 +171,20 @@ ul {
 }
 li {
     display: flex;                 /* Use flexbox */
-    justify-content: center;       /* Center the text */
-    align-items: flex-start;       /* Aligns bullet at the start */
-    padding-left: 40px;            /* Optional padding between bullet and text */
     position: relative;            /* For bullet alignment */
+    padding-left: 40px;
 }
 
 /* Make sure the bullet is always at the start */
+.second-bullet li::before {
+    content: '\25CB';              /* Unicode for white bullet point */
+    font-weight: bold;
+    position: absolute;
+    left: 0;                       /* Align bullet to the start */
+}
+
 li::before {
-    content: '\2022';              /* Unicode for bullet point */
+    content: '\25CF';              /* Unicode for bullet point */
     font-weight: bold;
     position: absolute;
     left: 0;                       /* Align bullet to the start */

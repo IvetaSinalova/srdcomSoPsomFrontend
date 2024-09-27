@@ -72,9 +72,20 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 w-full shadow-md bg-white z-50">
         <div className="flex navbar justify-between text-center items-center cursor-pointer text-lg">
           <Link to="/">
-            <div className="flex items-center page-name text-center justify-center">
+            <div className="flex page-name items-center">
               <img src="logo_quido.png" className="navbar-logo" alt="logo" />
-              {navbarOption("Srdcom so psom", "")}
+              <div
+                className={`flex items-center pl-2 navbar-title flex-col pt-2 ${
+                  pathName === "/" && !isMobile && " text-red "
+                }`}
+              >
+                <div className="flex w-full justify-start leading-none">
+                  SRDCOM
+                </div>
+                <div className="flex w-full justify-start leading-none">
+                  SO PSOM
+                </div>
+              </div>
             </div>
           </Link>
           <div className="flex">
@@ -82,6 +93,7 @@ const Navbar = () => {
             <Link to="/canistherapy">
               {navbarOption("CANISTERAPIA", "canistherapy")}
             </Link>
+            <Link to="/offers">{navbarOption("PONUKA", "offers")}</Link>
             <Link to="/posts">{navbarOption("ČLÁNKY", "posts")}</Link>
             <Link to="/contact">{navbarOption("KONTAKT", "contact")}</Link>
             <div className="flex justify-center items-center gap-3">

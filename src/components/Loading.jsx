@@ -32,7 +32,7 @@ const Loading = () => {
   return (
     <div className="flex items-center justify-center flex-col content-height">
       {/* Add flex-row-reverse to reverse the display order */}
-      <div className="flex flex-row-reverse gap-6">{pawItems}</div>
+      <div className="flex flex-row gap-6">{pawItems}</div>
     </div>
   );
 };
