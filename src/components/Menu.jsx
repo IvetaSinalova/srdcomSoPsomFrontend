@@ -39,6 +39,15 @@ const Menu = ({ currentPath, closeMenu }) => {
           CANISTERAPIA
         </div>
       </Link>
+      <Link to="/offers" onClick={closeMenu}>
+        <div
+          className={`menu-item ${showItems ? "show" : "hide"} ${
+            currentPath === "/offers" ? "bg-red" : "bg-white"
+          } px-4 py-2`}
+        >
+          PONUKA
+        </div>
+      </Link>
       <Link to="/posts" onClick={closeMenu}>
         <div
           className={`menu-item ${showItems ? "show" : "hide"} ${

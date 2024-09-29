@@ -76,7 +76,7 @@ const Navbar = () => {
             <div className="flex page-name items-center">
               <img src="logo_quido.png" className="navbar-logo" alt="logo" />
               <div
-                className={`flex items-center pl-2 navbar-title flex-col pt-2 ${
+                className={`flex items-center pl-2 navbar-title flex-col pt-4 ${
                   pathName === "/" && !isMobile && " text-red "
                 }`}
               >
@@ -119,17 +119,19 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="content">
-        {hamburgerSelected && (
-          <div>
+      <div className="flex justify-center items-center">
+        <div>
+          {hamburgerSelected && (
             <div>
-              <Menu currentPath={pathName} closeMenu={closeMenu} />
+              <div>
+                <Menu currentPath={pathName} closeMenu={closeMenu} />
+              </div>
+              <div ref={bgRef} className="overlay" />
             </div>
-            <div ref={bgRef} className="overlay" />
+          )}
+          <div className="content">
+            <Outlet />
           </div>
-        )}
-        <div className="px-8">
-          <Outlet />
         </div>
       </div>
     </div>

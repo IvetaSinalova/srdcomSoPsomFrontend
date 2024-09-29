@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 const About = () => {
   const introduction = (name, imageName, points) => {
     return (
-      <div className="about-image-wrapper flex items-center flex-col ">
+      <div className="flex items-center flex-col introduction-part-wrapper">
         <div className="option-title pb-4">{name}</div>
-        <img
-          src={`/${imageName}`}
-          alt={imageName}
-          className="about-image object-cover"
-        />
+        <div className="image-container">
+          <img src={`/${imageName}`} alt={imageName} />
+        </div>
+
         <ul className="pt-6">
           {points.map((point) => (
             <li key={point} className="text-start">
@@ -30,7 +29,7 @@ const About = () => {
             Vzdelanie:
             <ol className="second-bullet">
               <li className="flex justify-starts items-start flex-col">
-                <div>bakalárskeho stupňa -</div>
+                <div>Bakalárskeho stupňa -</div>
                 <a
                   href="https://www.uvlf.sk/akreditovane-studijne-programy/vztah-clovek-zviera-a-jeho-vyuzitie-v-canisterapii-a-hipoterapii"
                   target="_blank"
@@ -41,7 +40,7 @@ const About = () => {
                 </a>
               </li>
               <li className="flex justify-starts items-start flex-col">
-                <div>magisterského stupňa -</div>
+                <div>Magisterského stupňa -</div>
                 <a
                   href="https://www.uvlf.sk/akreditovane-studijne-programy/pohoda-a-ochrana-zvierat"
                   target="_blank"
