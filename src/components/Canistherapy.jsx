@@ -33,7 +33,7 @@ const Canistherapy = () => {
           </div>
         </div>
         <div className="py-6">
-          <ul className="flex flex-col items-center justify-center">
+          <ul className="flex flex-col items-center justify-center custom-bullets">
             <li>
               zvieratami asistované aktivity (AAA) - Animal Assisted Activity
             </li>

@@ -5,7 +5,7 @@ const Offers = () => {
   return (
     <div>
       <TitleImage imageName="titulka.jpg" text="PONUKA" />
-      <div className="pt-8 items-center flex flex-col justify-center gap-6 custom-font">
+      <div className="pt-8 items-center flex flex-col justify-center gap-6 custom-font custom-bullets">
         <ul>
           <li className="text-center flex justify-center items-center">
             Skupinové intervencie pre deti, seniorov{" "}

@@ -10,7 +10,7 @@ const About = () => {
           <img src={`/${imageName}`} alt={imageName} />
         </div>
 
-        <ul className="pt-6">
+        <ul className="pt-6 custom-bullets">
           {points.map((point) => (
             <li key={point} className="text-start">
               {point}

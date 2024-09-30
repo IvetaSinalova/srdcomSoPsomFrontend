@@ -74,6 +74,15 @@
     overflow: hidden;
 }
 
+.post-image-container{
+    max-width: 300px;
+    max-height: 300px;
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    overflow: hidden;
+}
+
 .image-container img {
     width: 100%;
     height: auto; /* Maintain aspect ratio */
@@ -187,6 +196,20 @@ li {
     padding-left: 40px;
 }
 
+button.slick-arrow.slick-next::before {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    color:#3c6e8d
+}
+
+button.slick-arrow.slick-prev::before {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    color:#3c6e8d
+}
+
 /* Make sure the bullet is always at the start */
 .second-bullet li::before {
     content: '\25CB';              /* Unicode for white bullet point */
@@ -195,7 +218,7 @@ li {
     left: 0;                       /* Align bullet to the start */
 }
 
-li::before {
+.custom-bullets li::before {
     content: '\25CF';              /* Unicode for bullet point */
     font-weight: bold;
     position: absolute;
@@ -204,7 +227,7 @@ li::before {
 
 body{
     background-color: #f8f7f6;
-    font-size: 23px;
+    font-size: 21px;
 }
 
 .contact-icon-wrapper{
@@ -298,6 +321,11 @@ body{
 }
 
 @media(max-width:830px){
+    .post-image-container img{
+        max-width: 250px;
+        max-height: 250px;
+    }
+    
     .titles{
         display: none;
     }
@@ -349,6 +377,12 @@ body{
     .logo-contact{
         height: 200px;
     }
+
+    .post-image-container img{
+        max-width: 200px;
+        max-height: 200px;
+    }
+    
 }
 
 @media(max-width:561px){
@@ -418,6 +452,8 @@ body{
         max-width: 200px;
         max-height: 200px;
     }
+
+   
 }
 
 @media(max-width:400px){

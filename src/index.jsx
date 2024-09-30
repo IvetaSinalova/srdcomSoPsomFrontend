@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import Posts from "./components/Posts";
 import Contact from "./components/Contact";
 import Offers from "./components/Offers";
+import Post from "./components/Post";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "/about", element: <About /> }, // About content
       { path: "/canistherapy", element: <Canistherapy /> },
       { path: "/posts", element: <Posts /> },
+      { path: "/post/:id", element: <Post /> },
       { path: "/contact", element: <Contact /> },
       { path: "/offers", element: <Offers /> },
     ],
