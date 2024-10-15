@@ -74,7 +74,7 @@ const Navbar = () => {
         <div className="flex navbar justify-between text-center items-center cursor-pointer text-lg">
           <Link to="/">
             <div className="flex page-name items-center">
-              <img src="logo_quido.png" className="navbar-logo" alt="logo" />
+              <img src="/logo_quido.png" className="navbar-logo" alt="logo" />
               <div
                 className={`flex items-center pl-2 navbar-title flex-col pt-4 ${
                   pathName === "/" && !isMobile && " text-red "
